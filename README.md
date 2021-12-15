@@ -1,0 +1,1 @@
+### This application is the beginning of a React Full-Stack Rep designed as a quick reference guide to monster weaknesses in the game, Monster Hunter Rise.
