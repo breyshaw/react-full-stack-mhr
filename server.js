@@ -5,14 +5,14 @@ import { fileURLToPath } from 'url'
 import logger from 'morgan'
 import cors from 'cors'
 
-import('./config/database.js')
-
-const app = express()
-
 //IMPORTING ROUTERS
 import { router as usersRouter } from './routes/users.js'
 import { router as authRouter } from './routes/auth.js'
 import { router as monstersRouter} from './routes/monsters.js'
+
+import('./config/database.js')
+const app = express()
+
 
 app.use(cors())
 app.use(logger('dev'))
@@ -20,6 +20,7 @@ app.use(express.json())
 
 app.use('/api/users', usersRouter)
 app.use('/api/auth', authRouter)
+app.use('/api/monsters', monstersRouter)
 
 app.get('/*', function (req, res) {
   res.sendFile(

@@ -2,9 +2,10 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
+
 // Upper camel case on these function
 //Defining the functions before using them in the main return statement
-const AddMonster = () => {
+const AddMonster = (props) => {
   // Bringing in the hook so it can be used
   const navigate = useNavigate()
   const [formData, setFormData] = useState({
@@ -22,7 +23,7 @@ const AddMonster = () => {
   const handleSubmit = async e => {
     e.preventDefault()
     try {
-      // call will go here to submit to API
+      props.handleCreateMonster(formData)
       navigate('/')
     } catch (err) {
       console.log(err)
