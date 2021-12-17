@@ -9,8 +9,10 @@ import('./config/database.js')
 
 const app = express()
 
+//IMPORTING ROUTERS
 import { router as usersRouter } from './routes/users.js'
 import { router as authRouter } from './routes/auth.js'
+import { router as monstersRouter} from './routes/monsters.js'
 
 app.use(cors())
 app.use(logger('dev'))

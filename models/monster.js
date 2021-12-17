@@ -4,7 +4,7 @@ import mongoose from 'mongoose'
 const commentSchema = new mongoose.Schema({
   content: String,
   //Referencing the profile model here so that each comment has an author
-  author: {type: mongoose.Schema.Types.ObjectId, ref: "Profile"}
+  author: { type: mongoose.Schema.Types.ObjectId, ref: "Profile" }
 },
   {
     timestamps: true,

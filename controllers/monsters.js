@@ -1,0 +1,1 @@
+import { Monster } from '../models/monster.js'
