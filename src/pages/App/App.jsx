@@ -29,6 +29,8 @@ const App = () => {
 				<Route path='/signup' element={<Signup handleSignupOrLogin={handleSignupOrLogin} />} />
 				<Route path='/login' element={<Login handleSignupOrLogin={handleSignupOrLogin} />} />
 				<Route path='/users' element={user ? <Users /> : <Navigate to='/login' />} />
+				{/* defining the route to create a "new monster form" */}
+				<Route path='/addMonster' />
 			</Routes>
 		</>
 	);

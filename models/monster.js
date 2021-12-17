@@ -20,7 +20,8 @@ const monsterSchema = new mongoose.Schema(
     //May actually use img urls here
     topWeakness: String,
     //Embedding the comments in the monsterSchema using an array of commentSchema
-    comments: [commentSchema]
+    comments: [commentSchema],
+    createdBy: {type: mongoose.Schema.Types.ObjectId, ref: "Profile"}
   },
   {
     timestamps: true,
