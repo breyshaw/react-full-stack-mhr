@@ -23,7 +23,7 @@ const App = () => {
 	}
 
 	return (
-		<>
+		<main>
 			<NavBar user={user} handleLogout={handleLogout} />
 			<Routes>
 				<Route path='/' element={<Landing user={user} />} />
@@ -31,10 +31,10 @@ const App = () => {
 				<Route path='/login' element={<Login handleSignupOrLogin={handleSignupOrLogin} />} />
 				<Route path='/users' element={user ? <Users /> : <Navigate to='/login' />} />
 				{/* adding the addMonster page component to the /addMonster route makes it to where the AddMonster page component is rendered when navigating to the localhost:3000/addMonster url */}
-				<Route path='/addMonster' element={<AddMonster />}/>
+				<Route path='/addMonster' element={<AddMonster />} />
 			</Routes>
-		</>
+		</main>
 	);
 }
- 
+
 export default App;

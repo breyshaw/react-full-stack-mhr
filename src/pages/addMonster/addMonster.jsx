@@ -41,30 +41,36 @@ const AddMonster = () => {
       //Calling the function from above
       onSubmit={handleSubmit}
     >
+      <p>Name:</p>
       <input
         type="text"
         value={name}
         name="name"
         onChange={handleChange}
       />
+      <p>Image URL:</p>
       <input
         type="text"
         value={image_url}
         name="image_url"
         onChange={handleChange}
       />
+      <p>Monster Type:</p>
       <input
         type="text"
         value={monsterType}
         name="monsterType"
         onChange={handleChange}
       />
+      <p>Top Weakness:</p>
       <input
         type="text"
         value={topWeakness}
         name="topWeakness"
         onChange={handleChange}
       />
+      <br />
+      <br />
       <button disabled={isFormInvalid()} >Add Monster</button>
         <Link to="/">
           <button>Cancel</button>
