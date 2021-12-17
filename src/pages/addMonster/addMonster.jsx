@@ -33,11 +33,44 @@ const AddMonster = () => {
   //Check's the validity of the form, specifically if all values have been entered
   const isFormInvalid = () => {
     return !(name && image_url && topWeakness)
+  }
+
+  return (
+    <form
+      autocomplete="off"
+      //Calling the function from above
+      onSubmit={handleSubmit}
+    >
+      <input
+        type="text"
+        value={name}
+        name="name"
+        onChange={handleChange}
+      />
+      <input
+        type="text"
+        value={image_url}
+        name="image_url"
+        onChange={handleChange}
+      />
+      <input
+        type="text"
+        value={monsterType}
+        name="monsterType"
+        onChange={handleChange}
+      />
+      <input
+        type="text"
+        value={topWeakness}
+        name="topWeakness"
+        onChange={handleChange}
+      />
+      <button disabled={isFormInvalid()} >Add Monster</button>
+        <Link to="/">
+          <button>Cancel</button>
+        </Link>
+    </form>
+  );
 }
 
-    return (
-      <form>
-          <h1>AddMonster</h1>
-      </form>
-    );
-}
+export default AddMonster

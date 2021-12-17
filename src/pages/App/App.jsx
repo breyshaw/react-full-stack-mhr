@@ -6,6 +6,7 @@ import Login from '../Login/Login'
 import Landing from '../Landing/Landing'
 import Users from '../Users/Users'
 import * as authService from '../../services/authService'
+import AddMonster from '../addMonster/addMonster'
 
 const App = () => {
 	const [user, setUser] = useState(authService.getUser())
@@ -29,8 +30,8 @@ const App = () => {
 				<Route path='/signup' element={<Signup handleSignupOrLogin={handleSignupOrLogin} />} />
 				<Route path='/login' element={<Login handleSignupOrLogin={handleSignupOrLogin} />} />
 				<Route path='/users' element={user ? <Users /> : <Navigate to='/login' />} />
-				{/* defining the route to create a "new monster form" */}
-				<Route path='/addMonster' />
+				{/* adding the addMonster page component to the /addMonster route makes it to where the AddMonster page component is rendered when navigating to the localhost:3000/addMonster url */}
+				<Route path='/addMonster' element={<AddMonster />}/>
 			</Routes>
 		</>
 	);

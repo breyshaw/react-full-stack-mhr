@@ -12,10 +12,13 @@ const NavBar = ({ user, handleLogout }) => {
 								Welcome, {user.name}
 							</li>
 							<li>
-                <Link to="/users">Users</Link>
-              </li>
+								<Link to="/users">Users</Link>
+							</li>
 							<li>
 								<Link to='' onClick={handleLogout}>LOG OUT</Link>
+							</li>
+							<li>
+								<Link to="/addMonster">Add Monster</Link>
 							</li>
 						</ul>
 					</div>
