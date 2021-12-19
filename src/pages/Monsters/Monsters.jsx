@@ -4,7 +4,7 @@ const Monsters = (props) => {
       <h1>Monsters</h1>
       <div className="row row-cols-1 row-cols-md-3 g-4">
         {props.monsters.map(monster =>
-        <div className="col">
+        <div key={monster._id} className="col">
           <div className="card">
             <img src={monster.image_url} class="card-img-top" alt="..." />
             <div className="card-body">
