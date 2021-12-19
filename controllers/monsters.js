@@ -8,6 +8,15 @@ Monster.create(req.body)
 })
 }
 
+function index(req, res) {
+  Monster.find({})
+  .populate('createdBy')
+  .then(monsters => {
+    res.json(monsters)
+  })
+}
+
 export {
-  create
+  create,
+  index
 }

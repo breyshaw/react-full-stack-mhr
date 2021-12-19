@@ -20,6 +20,9 @@ const NavBar = ({ user, handleLogout }) => {
 							<li>
 								<Link to="/addMonster">Add Monster</Link>
 							</li>
+							<li>
+								<Link to="/Monsters">All Monsters</Link>
+							</li>
 						</ul>
 					</div>
 				</nav>

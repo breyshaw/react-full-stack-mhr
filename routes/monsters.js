@@ -10,5 +10,6 @@ const router = Router()
 /*---------- Protected Routes ----------*/
 router.use(decodeUserFromToken)
 router.post('/', checkAuth, monstersCtrl.create)
+router.get('/', checkAuth, monstersCtrl.index)
 
 export { router }

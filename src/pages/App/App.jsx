@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Routes, Route, useNavigate, Navigate } from 'react-router-dom'
 import NavBar from '../../components/NavBar/NavBar'
 import Signup from '../Signup/Signup'
@@ -7,12 +7,18 @@ import Landing from '../Landing/Landing'
 import Users from '../Users/Users'
 import * as authService from '../../services/authService'
 import AddMonster from '../AddMonster/AddMonster'
-import { createMonster } from '../../services/monsterService'
+import Monsters from '../Monsters/Monsters'
+import { createMonster, getMonsters } from '../../services/monsterService'
 
 const App = () => {
 	const [user, setUser] = useState(authService.getUser())
 	const [monsters, setMonsters] = useState([])
 	const navigate = useNavigate()
+
+	useEffect(()=> {
+		getMonsters()
+		.then(monsters => setMonsters(monsters))
+	}, [])
 
 	const handleLogout = () => {
 		authService.logout()
@@ -27,6 +33,7 @@ const App = () => {
 	const handleCreateMonster = monsterData => {
 		//Line 29 creates it in the DB
 		createMonster(monsterData)
+		//Updating state
 		.then(newMonsterData => setMonsters([...monsters, newMonsterData]) )
 	}
 
@@ -41,6 +48,7 @@ const App = () => {
 				{/* adding the addMonster page component to the /addMonster route makes it to where the AddMonster page component is rendered when navigating to the localhost:3000/addMonster url */}
 				{/* the handleCreateMonster function is being passed to the AddMonster component as a prop */}
 				<Route path='/addMonster' element={<AddMonster handleCreateMonster={handleCreateMonster} />} />
+				<Route path='/monsters' element={<Monsters monsters={monsters}/>}/>
 			</Routes>
 		</main>
 	);

@@ -10,6 +10,15 @@ function createMonster(monsterData) {
   .then(res => res.json())
 }
 
+function getMonsters() {
+  //No need for method because the default for fetch is a GET request
+  return fetch(BASE_URL, {
+    headers: {'Authorization': `Bearer ${tokenService.getToken()}`, 'Content-Type': 'application/json'}, 
+  })
+  .then(res => res.json())
+}
+
 export {
-  createMonster
+  createMonster,
+  getMonsters
 }
