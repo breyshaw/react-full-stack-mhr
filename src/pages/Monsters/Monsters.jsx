@@ -12,6 +12,7 @@ const Monsters = (props) => {
               <p className="card-text">Type: {monster.monsterType}</p>
               <p>Top Weakness: {monster.topWeakness}</p>
               <p className="card-text">PostedBy: Admin {monster.createdBy.name}</p>
+              <a href="#" className="btn btn-primary">More info</a>
             </div>
           </div>
         </div>
